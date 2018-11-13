@@ -1,20 +1,18 @@
-//
-//  ViewController.swift
-//  SpriteUtility 11.13
-//
-//  Created by Meera Andersen on 11/13/18.
-//  Copyright © 2018 Meera Andersen. All rights reserved.
-//
-
 import UIKit
+import SpriteKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    var skscene: CustomScene? = nil
+    
+    @IBOutlet weak var skview: SKView!
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        skscene = CustomScene(size: view.bounds.size)
+        skview.presentScene(skscene)
     }
-
-
+    
 }
 
